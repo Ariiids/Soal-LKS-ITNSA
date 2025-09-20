@@ -1,0 +1,25 @@
+---
+fw:
+  hostname: 127.0.0.1
+  username: root
+mail:
+  hostname: 10.1.20.10
+  username: root
+int-srv01:
+  hostname: 10.1.10.10
+  username: root
+ha-prx01:
+  hostname: 10.1.20.21
+  username: root
+ha-prx02:
+  hostname: 10.1.20.22
+  username: root
+web01:
+  hostname: 10.1.20.31
+  username: root
+web02:
+  hostname: 10.1.20.32
+  username: root
+jamie-ws01:
+  hostname: 1.1.1.20
+  username: root

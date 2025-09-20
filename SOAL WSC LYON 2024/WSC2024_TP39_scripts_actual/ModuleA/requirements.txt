@@ -1,0 +1,5 @@
+requests
+nornir
+nornir_utils
+nornir_paramiko
+cryptography<43.0.0

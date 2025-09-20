@@ -1,0 +1,61 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Install packages
+      ansible.builtin.package:
+        name:
+          - python3
+          - python3-venv
+          - python3-pip
+
+    - name: Create the python venv
+      command: python3 -m venv /usr/local/share/grading/venv
+      args:
+        creates: /usr/local/share/grading/venv/bin/activate
+
+    - name: Copy the grading scripts to the host
+      copy:
+        src: "{{ item }}"
+        dest: /usr/local/share/grading/
+        mode: 0755
+        owner: root
+        group: root
+      loop:
+        - "grading.sh"
+        - "requirements.txt"
+        - "wsc_grading.zip"
+
+    - name: symlink grading.sh
+      ansible.builtin.file:
+        src: /usr/local/share/grading/grading.sh
+        dest: /usr/local/bin/grading
+        owner: root
+        group: root
+        mode: a+x
+        state: link
+
+    - name: Install dependencies from requirements.txt
+      pip:
+        requirements: /usr/local/share/grading/requirements.txt
+        virtualenv: /usr/local/share/grading/venv
+        virtualenv_site_packages: no
+    - name: Copy private ssh key to .ssh of root
+      copy:
+        src: "id_ed25519"
+        dest: "/root/.ssh/"
+        mode: 0600
+        owner: root
+        group: root
+    - name: Copy public ssh key to .ssh of root
+      copy:
+        src: "grading.pub"
+        dest: "/root/.ssh/authorized_keys"
+        mode: 600
+        owner: root
+        group: root
+    - name: clean up behind myself
+      file:
+        path: /tmp/grading/
+        state: absent
