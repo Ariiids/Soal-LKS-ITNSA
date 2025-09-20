@@ -1,0 +1,59 @@
+Ticket #1
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #2
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #3
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #4
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #5
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #6
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #7
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #8
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #9
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE
+
+Ticket #10
+Root cause:
+- WRITE HERE
+Solution:
+- WRITE HERE

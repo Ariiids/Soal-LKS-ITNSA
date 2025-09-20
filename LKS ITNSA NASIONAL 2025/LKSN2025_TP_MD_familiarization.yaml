@@ -1,0 +1,1165 @@
+annotations:
+  - border_color: '#808080FF'
+    border_radius: 0
+    border_style: ''
+    color: '#82D9E7'
+    thickness: 1
+    type: rectangle
+    x1: -80.0
+    y1: 160.0
+    x2: 880.0
+    y2: 280.0
+    z_index: 0
+  - border_color: '#808080FF'
+    border_radius: 0
+    border_style: ''
+    color: '#6ECF5BA8'
+    thickness: 1
+    type: rectangle
+    x1: -80.0
+    y1: -200.0
+    x2: 880.0
+    y2: 280.0
+    z_index: 1
+  - border_color: '#808080FF'
+    border_radius: 0
+    border_style: ''
+    color: '#DB9FDB61'
+    thickness: 1
+    type: rectangle
+    x1: -400.0
+    y1: 160.0
+    x2: 240.0
+    y2: 280.0
+    z_index: 2
+  - border_color: '#808080FF'
+    border_radius: 0
+    border_style: ''
+    color: '#FFB570DE'
+    thickness: 1
+    type: rectangle
+    x1: -400.0
+    y1: -200.0
+    x2: 240.0
+    y2: 280.0
+    z_index: 3
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#0A0A0AFF'
+    rotation: 0
+    text_bold: true
+    text_content: COR1
+    text_font: monospace
+    text_italic: false
+    text_size: 16
+    text_unit: pt
+    thickness: 2
+    type: text
+    x1: -40.0
+    y1: 0.0
+    z_index: 4
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#070606FF'
+    rotation: 0
+    text_bold: true
+    text_content: COR2
+    text_font: monospace
+    text_italic: false
+    text_size: 16
+    text_unit: pt
+    thickness: 2
+    type: text
+    x1: -40.0
+    y1: 200.0
+    z_index: 5
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#0A0A0AFF'
+    rotation: 0
+    text_bold: true
+    text_content: REG1
+    text_font: monospace
+    text_italic: false
+    text_size: 16
+    text_unit: pt
+    thickness: 2
+    type: text
+    x1: -360.0
+    y1: 0.0
+    z_index: 6
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#111010FF'
+    rotation: 0
+    text_bold: true
+    text_content: REG2
+    text_font: monospace
+    text_italic: false
+    text_size: 16
+    text_unit: pt
+    thickness: 2
+    type: text
+    x1: -360.0
+    y1: 240.0
+    z_index: 7
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: S2CO2
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 600
+    y: 320
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: S2CO1
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 600
+    y: -80
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname CO1-CLI
+          # configurable user account
+          USERNAME=admin
+          PASSWORD=Skill39@ID
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: CO1-CLI
+    node_definition: desktop
+    parameters: {}
+    ram: null
+    tags: []
+    x: 760
+    y: -40
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname CO2-CLI
+          # configurable user account
+          USERNAME=admin
+          PASSWORD=Skill39@ID
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: CO2-CLI
+    node_definition: desktop
+    parameters: {}
+    ram: null
+    tags: []
+    x: 760
+    y: 320
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname RG1-CLI
+          # configurable user account
+          USERNAME=admin
+          PASSWORD=Skill39@ID
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: RG1-CLI
+    node_definition: desktop
+    parameters: {}
+    ram: null
+    tags: []
+    x: -360
+    y: -160
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: RCO1
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet0/4
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n6
+    image_definition: null
+    label: RCO2
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: 160
+    y: 0
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet0/4
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: RCO3
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: 160
+    y: 240
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet0/4
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n8
+    image_definition: null
+    label: RCO4
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: 400
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet0/4
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: iosxe_config.txt
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname CO1-SVR
+          ifconfig eth0 10.10.100.101 netmask 255.255.255.0
+          route add default gw 10.10.100.10
+          # configurable user account
+          USERNAME=admin
+          PASSWORD=Skill39@ID
+          # no password for tc user by default
+          TC_PASSWORD=
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n9
+    image_definition: null
+    label: CO1-SVR
+    node_definition: server
+    parameters: {}
+    ram: null
+    tags: []
+    x: 760
+    y: -160
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n10
+    image_definition: null
+    label: S3CO1
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 400
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet1/1
+        slot: 5
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n11
+    image_definition: null
+    label: S3CO2
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 480
+    y: 0
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n12
+    image_definition: null
+    label: S3CO3
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 440
+    y: 240
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n13
+    image_definition: null
+    label: S3CO4
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: 400
+    y: 400
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet1/0
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n14
+    image_definition: null
+    label: SRG1
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: -200
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n15
+    image_definition: null
+    label: RG2
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: -200
+    y: 240
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n16
+    image_definition: null
+    label: SRG2
+    node_definition: iosvl2
+    parameters: {}
+    ram: null
+    tags: []
+    x: -200
+    y: 400
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname RG2-CLI
+          # configurable user account
+          USERNAME=admin
+          PASSWORD=Skill39@ID
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n17
+    image_definition: null
+    label: RG2-CLI
+    node_definition: desktop
+    parameters: {}
+    ram: null
+    tags: []
+    x: -360
+    y: 400
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n18
+    image_definition: null
+    label: RG1
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: -200
+    y: 0
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n19
+    image_definition: null
+    label: ISP
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: 120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet0/4
+        slot: 4
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n20
+    image_definition: null
+    label: CO1
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: -40
+    y: -80
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: ''
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n21
+    image_definition: null
+    label: CO2
+    node_definition: iosv
+    parameters: {}
+    ram: null
+    tags: []
+    x: -40
+    y: 320
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet0/3
+        slot: 3
+        type: physical
+links:
+  - id: l0
+    n1: n2
+    n2: n1
+    i1: i0
+    i2: i1
+    conditioning: {}
+    label: CO1-CLI-eth0<->S2CO1-GigabitEthernet0/0
+  - id: l1
+    n1: n3
+    n2: n0
+    i1: i0
+    i2: i1
+    conditioning: {}
+    label: CO2-CLI-eth0<->S2CO2-GigabitEthernet0/0
+  - id: l2
+    n1: n5
+    n2: n6
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: RCO1-GigabitEthernet0/0<->RCO2-GigabitEthernet0/0
+  - id: l3
+    n1: n7
+    n2: n8
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: RCO3-GigabitEthernet0/0<->RCO4-GigabitEthernet0/0
+  - id: l4
+    n1: n6
+    n2: n7
+    i1: i5
+    i2: i5
+    conditioning: {}
+    label: RCO2-GigabitEthernet0/4<->RCO3-GigabitEthernet0/4
+  - id: l5
+    n1: n5
+    n2: n8
+    i1: i5
+    i2: i5
+    conditioning: {}
+    label: RCO1-GigabitEthernet0/4<->RCO4-GigabitEthernet0/4
+  - id: l6
+    n1: n9
+    n2: n1
+    i1: i0
+    i2: i4
+    conditioning: {}
+    label: CO1-SVR-eth0<->S2CO1-GigabitEthernet0/3
+  - id: l7
+    n1: n5
+    n2: n10
+    i1: i2
+    i2: i1
+    conditioning: {}
+    label: RCO1-GigabitEthernet0/1<->S3CO1-GigabitEthernet0/0
+  - id: l8
+    n1: n6
+    n2: n10
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: RCO2-GigabitEthernet0/1<->S3CO1-GigabitEthernet0/1
+  - id: l9
+    n1: n5
+    n2: n11
+    i1: i3
+    i2: i1
+    conditioning: {}
+    label: RCO1-GigabitEthernet0/2<->S3CO2-GigabitEthernet0/0
+  - id: l10
+    n1: n6
+    n2: n11
+    i1: i3
+    i2: i2
+    conditioning: {}
+    label: RCO2-GigabitEthernet0/2<->S3CO2-GigabitEthernet0/1
+  - id: l11
+    n1: n10
+    n2: n11
+    i1: i3
+    i2: i3
+    conditioning: {}
+    label: S3CO1-GigabitEthernet0/2<->S3CO2-GigabitEthernet0/2
+  - id: l12
+    n1: n1
+    n2: n10
+    i1: i2
+    i2: i4
+    conditioning: {}
+    label: S2CO1-GigabitEthernet0/1<->S3CO1-GigabitEthernet0/3
+  - id: l13
+    n1: n11
+    n2: n1
+    i1: i4
+    i2: i3
+    conditioning: {}
+    label: S3CO2-GigabitEthernet0/3<->S2CO1-GigabitEthernet0/2
+  - id: l14
+    n1: n7
+    n2: n12
+    i1: i2
+    i2: i1
+    conditioning: {}
+    label: RCO3-GigabitEthernet0/1<->S3CO3-GigabitEthernet0/0
+  - id: l15
+    n1: n8
+    n2: n12
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: RCO4-GigabitEthernet0/1<->S3CO3-GigabitEthernet0/1
+  - id: l16
+    n1: n7
+    n2: n13
+    i1: i3
+    i2: i1
+    conditioning: {}
+    label: RCO3-GigabitEthernet0/2<->S3CO4-GigabitEthernet0/0
+  - id: l17
+    n1: n8
+    n2: n13
+    i1: i3
+    i2: i2
+    conditioning: {}
+    label: RCO4-GigabitEthernet0/2<->S3CO4-GigabitEthernet0/1
+  - id: l18
+    n1: n12
+    n2: n13
+    i1: i3
+    i2: i3
+    conditioning: {}
+    label: S3CO3-GigabitEthernet0/2<->S3CO4-GigabitEthernet0/2
+  - id: l19
+    n1: n12
+    n2: n0
+    i1: i4
+    i2: i2
+    conditioning: {}
+    label: S3CO3-GigabitEthernet0/3<->S2CO2-GigabitEthernet0/1
+  - id: l20
+    n1: n13
+    n2: n0
+    i1: i4
+    i2: i3
+    conditioning: {}
+    label: S3CO4-GigabitEthernet0/3<->S2CO2-GigabitEthernet0/2
+  - id: l21
+    n1: n14
+    n2: n4
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: SRG1-GigabitEthernet0/1<->RG1-CLI-eth0
+  - id: l22
+    n1: n16
+    n2: n15
+    i1: i1
+    i2: i2
+    conditioning: {}
+    label: SRG2-GigabitEthernet0/0<->RG2-GigabitEthernet0/1
+  - id: l23
+    n1: n17
+    n2: n16
+    i1: i0
+    i2: i2
+    conditioning: {}
+    label: RG2-CLI-eth0<->SRG2-GigabitEthernet0/1
+  - id: l24
+    n1: n18
+    n2: n14
+    i1: i2
+    i2: i1
+    conditioning: {}
+    label: RG1-GigabitEthernet0/1<->SRG1-GigabitEthernet0/0
+  - id: l25
+    n1: n10
+    n2: n11
+    i1: i5
+    i2: i5
+    conditioning: {}
+    label: S3CO1-GigabitEthernet1/0<->S3CO2-GigabitEthernet1/0
+  - id: l26
+    n1: n12
+    n2: n13
+    i1: i5
+    i2: i5
+    conditioning: {}
+    label: S3CO3-GigabitEthernet1/0<->S3CO4-GigabitEthernet1/0
+  - id: l27
+    n1: n20
+    n2: n5
+    i1: i2
+    i2: i4
+    conditioning: {}
+    label: CO1-GigabitEthernet0/1<->RCO1-GigabitEthernet0/3
+  - id: l28
+    n1: n20
+    n2: n6
+    i1: i3
+    i2: i4
+    conditioning: {}
+    label: CO1-GigabitEthernet0/2<->RCO2-GigabitEthernet0/3
+  - id: l29
+    n1: n21
+    n2: n7
+    i1: i2
+    i2: i4
+    conditioning: {}
+    label: CO2-GigabitEthernet0/1<->RCO3-GigabitEthernet0/3
+  - id: l30
+    n1: n21
+    n2: n8
+    i1: i3
+    i2: i4
+    conditioning: {}
+    label: CO2-GigabitEthernet0/2<->RCO4-GigabitEthernet0/3
+  - id: l31
+    n1: n20
+    n2: n19
+    i1: i4
+    i2: i2
+    conditioning: {}
+    label: CO1-GigabitEthernet0/3<->ISP-GigabitEthernet0/1
+  - id: l32
+    n1: n19
+    n2: n21
+    i1: i3
+    i2: i4
+    conditioning: {}
+    label: ISP-GigabitEthernet0/2<->CO2-GigabitEthernet0/3
+  - id: l33
+    n1: n19
+    n2: n18
+    i1: i4
+    i2: i1
+    conditioning: {}
+    label: ISP-GigabitEthernet0/3<->RG1-GigabitEthernet0/0
+  - id: l34
+    n1: n19
+    n2: n15
+    i1: i5
+    i2: i1
+    conditioning: {}
+    label: ISP-GigabitEthernet0/4<->RG2-GigabitEthernet0/0
+lab:
+  description: ''
+  notes: ''
+  title: Familiarisasi Module C-LKSN2025
+  version: 0.2.2
